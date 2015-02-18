@@ -1,8 +1,8 @@
 Vagrant Box for Ruby 1.9.3 Rails App Setup
 ------
 
-- Install vagrant and virtualbox.
-- Run `vagrant plugin install vagrant-vbguest` and `vagrant plugin install vagrant-librarian-chef`
+- Install vagrant (test with 1.7.2) and virtualbox (tested with 4.3.16).
+- Run `vagrant plugin install vagrant-vbguest` (tested with 0.10.0) and `vagrant plugin install vagrant-librarian-chef` (tested with 0.2.1)
 - Run `vagrant up` from directory with `Vagrantfile`, _you may need to adjust forwarded port in Vagrantfile if there's a conflict_.
 - Run `vagrant ssh`
 - Change to /vagrant/todo dir: `cd /vagrant/todo`

@@ -139,6 +139,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
   end
 
+  config.vm.provision "update_ruby_gems", type: "shell", privileged: true do |s|
+    s.inline = "gem install rubygems-update; update_rubygems"
+  end
+
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).
   #
