@@ -125,7 +125,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
           global: "1.9.3-p547",
           gems: {
             "1.9.3-p547" => [
-              { name: "bundler" }
+              { name: "bundler" },
+              { 'name'    => 'rails',
+                'version' => '3.2.1'
+              }
             ]
           }
         }]
@@ -139,8 +142,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     }
   end
 
-  config.vm.provision "update_ruby_gems", type: "shell", privileged: true do |s|
-    s.inline = "gem install rubygems-update; update_rubygems"
+  config.vm.provision "update_rubygems", type: "shell", privileged: true do |s|
+    s.inline = "gem install rubygems-update; update_rubygems --version=2.4.6"
   end
 
   # Enable provisioning with chef server, specifying the chef server URL,
